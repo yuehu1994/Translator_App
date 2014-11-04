@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Translator</string>
+    <string name="welcome">Welcome</string>
+    <string name="action_settings">Settings</string>
+    <string name="translate">Translate:</string>
+    <string name="english">English/Anglais/Inglés</string>
+    <string name="french">French/Français/Francés</string>
+    <string name="spanish">Spanish/Espagnol/Español</string>
+    <string name="toLabel">To:</string>
+    <string name="goButton">Go!</string>
+</resources>
