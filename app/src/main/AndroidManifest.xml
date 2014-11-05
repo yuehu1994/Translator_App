@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.example.yuehu.translator.MainActivity"
             android:label="@string/app_name" >
@@ -16,10 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Yue Created a second activity with parent of above activity-->
         <activity
             android:name="com.example.yuehu.CameraActivity.Camera"
             android:label="Camera"
-            >
+            android:parentActivityName="com.example.yuehu.translator.MainActivity">
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = "com.example.yuehu.translator.MainActivity"/>
+
         </activity>
     </application>
 

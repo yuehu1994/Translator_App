@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="0dp" tools:context=".Camera">
+    android:layout_height="match_parent" android:orientation="vertical" tools:context=".Camera">
+
+    <!-- Yue rewrote this to a linear layout! Its nicer and more
+     compatible with different phone sizes.-->
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Camera goes here!"
-        android:id="@+id/tempCam"
+        android:textSize = "40sp"
+        android:typeface="serif"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/inputText"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize = "40sp"
+        android:typeface="serif"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/outputText"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:typeface="serif"
+        android:textSize="30sp"
+        android:id="@+id/go_back"
+        android:clickable="true"
+        android:enabled="true"
+        android:background="@drawable/triangle_button"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="400dp"
+
+    />
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -23,5 +49,9 @@
         android:enabled="true"
         android:background="@drawable/circle_button"
         android:layout_marginTop="400dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginLeft = "135dp"
+        android:onClick="backButton"
+     />
+
+
 </RelativeLayout>
