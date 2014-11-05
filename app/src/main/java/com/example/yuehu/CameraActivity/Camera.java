@@ -15,7 +15,7 @@ public class Camera extends Activity{
     }
 
 
-
+//fuck this
 
 
 
