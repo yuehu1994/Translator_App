@@ -34,6 +34,10 @@ public class MainActivity extends Activity {
         return;
     }
 
+    public void toCamera(View view){
+        setContentView(R.layout.camera_view);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

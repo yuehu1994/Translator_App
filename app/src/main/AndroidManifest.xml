@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.yuehu.CameraActivity.Camera"
+            android:label="Camera"
+            >
+        </activity>
     </application>
 
 </manifest>
