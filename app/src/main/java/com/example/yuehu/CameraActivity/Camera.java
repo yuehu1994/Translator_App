@@ -21,7 +21,7 @@ public class Camera extends Activity{
         startActivity(intent);
     }
 
-
+    //overides
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
