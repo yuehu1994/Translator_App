@@ -21,7 +21,7 @@
         <activity
             android:name="com.example.yuehu.CameraActivity.Camera"
             android:label="Camera"
-            android:parentActivityName="com.example.yuehu.translator.MainActivity">
+            >
             <meta-data
                 android:name = "android.support.PARENT_ACTIVITY"
                 android:value = "com.example.yuehu.translator.MainActivity"/>

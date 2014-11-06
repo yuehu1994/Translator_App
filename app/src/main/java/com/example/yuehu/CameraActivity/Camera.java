@@ -22,7 +22,7 @@ public class Camera extends Activity{
     }
 
     //overides
-
+    //testing comments
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

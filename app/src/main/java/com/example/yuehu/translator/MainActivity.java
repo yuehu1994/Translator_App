@@ -32,52 +32,27 @@ public class MainActivity extends Activity {
     public void translateSetClick(View view){
         switch(view.getId()){
             case R.id.radioButtonEnglish:
-                if(inputLanguage.equals("none")){
-                    inputLanguage = "english";}                 //select
-                else if(inputLanguage.equals("english")){
-                    inputLanguage = "none";                     //deselect
-                }
+               inputLanguage = "english";                //select
                 break;
             case R.id.radioButtonFrench:
-                if(inputLanguage.equals("none")){
-                    inputLanguage = "french";}                  //select
-                else if(inputLanguage.equals("french")){
-                    inputLanguage = "none";                     //deselect
-                }
+                    inputLanguage = "french";                  //select
                 break;
             case R.id.radioButtonSpanish:
-                if(inputLanguage.equals("none")){
-                    inputLanguage = "spanish";}
-                else if(inputLanguage.equals("spanish")){
-                    inputLanguage = "none";
-                }
+                    inputLanguage = "spanish";
                 break;
         }
 
     }
     public void toSetClick(View view){
         switch(view.getId()) {
-            case R.id.radioButtonEnglish:
-                if(outputLanguage.equals("none")){
-                    outputLanguage = "english";}                 //select
-                else if(outputLanguage.equals("english")){
-                    outputLanguage = "none";                     //deselect
-                }
+            case R.id.radioButtonToEnglish:
+                outputLanguage = "english";
                 break;
-            case R.id.radioButtonFrench:
-                if(outputLanguage.equals("none")){
-                    outputLanguage = "french";}                  //select
-                else if(outputLanguage.equals("french")){
-                    outputLanguage = "none";                     //deselect
-                }
+            case R.id.radioButtonToFrench:
+                outputLanguage = "french";
                 break;
-            case R.id.radioButtonSpanish:
-                if(outputLanguage.equals("none")){
-                    outputLanguage="spanish";
-                }
-                else if(outputLanguage.equals("spanish")){
-                    outputLanguage = "none";
-                }
+            case R.id.radioButtonToSpanish:
+                outputLanguage="spanish";
                 break;
         }
     }
