@@ -1,5 +1,5 @@
 <!--
-Yue Hu Wrote this stuff
+
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,12 +59,12 @@ Yue Hu Wrote this stuff
             android:typeface="serif"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:id="@+id/radioButtonEnglish"
+            android:id="@+id/radioButtonFromEnglish"
             android:layout_marginLeft="35dp"
             android:checked="false"
             android:clickable="true"
             android:enabled="true"
-            android:onClick="translateSetClick"/>
+            android:onClick="fromSetClick"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,12 +72,12 @@ Yue Hu Wrote this stuff
             android:typeface="serif"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:id="@+id/radioButtonFrench"
+            android:id="@+id/radioButtonFromFrench"
             android:layout_marginLeft="35dp"
             android:checked="false"
             android:enabled="true"
             android:clickable="true"
-            android:onClick="translateSetClick"/>
+            android:onClick="fromSetClick"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,12 +85,12 @@ Yue Hu Wrote this stuff
             android:typeface="serif"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:id="@+id/radioButtonSpanish"
+            android:id="@+id/radioButtonFromSpanish"
             android:layout_marginLeft="35dp"
             android:checked="false"
             android:clickable="true"
             android:enabled="true"
-            android:onClick="translateSetClick"/>
+            android:onClick="fromSetClick"/>
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"

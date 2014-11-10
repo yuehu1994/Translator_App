@@ -12,7 +12,7 @@ import com.example.yuehu.translator.R;
 
 public class Camera extends Activity{
 
-    //Yue wrote this-rachel-change if you want!
+    //
     private String inputString;
     private String outputString;
 
@@ -28,7 +28,6 @@ public class Camera extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_view);
 
-        //Yue also wrote this-should be ok:
         Intent intent = getIntent();
         String[] passedInfo = intent.getStringArrayExtra("MainActivity.MESSAGE");
         inputString = passedInfo[0];

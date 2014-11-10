@@ -12,37 +12,52 @@ import android.widget.Toast;
 import com.example.yuehu.CameraActivity.Camera;
 
 /**
- * Yue Hu Wrote This File
+This file contains all logic for the main view where languages are first selected.
  */
 public class MainActivity extends Activity {
 
-    private String inputLanguage = "none";                               //these are global! watch out when changing
-    private String outputLanguage = "none";
-    public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";                   //pass this
+    /* Global variables - be careful of changing*/
 
+    /* the language of the image*/
+    private String inputLanguage = "none";
+    /* the language used in translating the image text */
+    private String outputLanguage = "none";
+    /* TODO: find out what this is*/
+    public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
+
+    /* getters for the languages */
     public String getInputLanguage(){
         return inputLanguage;
-    }               //getters
+    }
 
     public String getOutputLanguage(){
         return outputLanguage;
     }
 
-
-    public void translateSetClick(View view){
+    /*
+        @param  view
+        @return void
+        @info   setter function used to update global inputLanguage variable
+     */
+    public void fromSetClick(View view){
         switch(view.getId()){
-            case R.id.radioButtonEnglish:
-               inputLanguage = "english";                //select
+            case R.id.radioButtonFromEnglish:
+               inputLanguage = "english";
                 break;
-            case R.id.radioButtonFrench:
-                    inputLanguage = "french";                  //select
+            case R.id.radioButtonFromFrench:
+                    inputLanguage = "french";
                 break;
-            case R.id.radioButtonSpanish:
+            case R.id.radioButtonFromSpanish:
                     inputLanguage = "spanish";
                 break;
         }
-
     }
+
+    /*
+        @param  view
+        @return void
+        @info   setter function used to update global outputLanguage variable
+    */
     public void toSetClick(View view){
         switch(view.getId()) {
             case R.id.radioButtonToEnglish:
@@ -57,15 +72,21 @@ public class MainActivity extends Activity {
         }
     }
 
-
+    /*
+        @param  view
+        @return void
+        @info   function called with Go! button pressed, checks input and launches camera activity
+    */
     public void toCamera(View view){
+        /* Error checking - user hasn't selected either or just one input language */
         if(getInputLanguage().equals("none") || getOutputLanguage().equals("none")){
             Context context = getApplicationContext();
-            CharSequence toastText = "Please select languages";
+            CharSequence toastText = "Please select two languages";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context,toastText,duration);
             toast.show();
         }
+        /* both languages selected, launch camera view */
         else{
             Intent intent = new Intent(this, Camera.class);
             String[] message = new String[]{inputLanguage,outputLanguage};      //simple parse in next view

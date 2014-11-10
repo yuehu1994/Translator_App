@@ -23,22 +23,10 @@
         android:textSize = "40sp"
         android:typeface="serif"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_below="@id/inputText"
         android:id="@+id/outputText"
         />
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:typeface="serif"
-        android:textSize="30sp"
-        android:id="@+id/go_back"
-        android:clickable="true"
-        android:enabled="true"
-        android:background="@drawable/triangle_button"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="400dp"
 
-    />
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"

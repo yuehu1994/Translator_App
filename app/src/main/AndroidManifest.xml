@@ -2,11 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yuehu.translator" >
 
+    <!--Overall wrapper for all views in app -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <!--main view for app - select languages for translation-->
         <activity
             android:name="com.example.yuehu.translator.MainActivity"
             android:label="@string/app_name" >
@@ -17,15 +20,13 @@
             </intent-filter>
         </activity>
 
-        <!-- Yue Created a second activity with parent of above activity-->
+        <!--camera view - child of above activity-->
         <activity
             android:name="com.example.yuehu.CameraActivity.Camera"
-            android:label="Camera"
-            >
+            android:label="@string/camera_view" >
             <meta-data
                 android:name = "android.support.PARENT_ACTIVITY"
                 android:value = "com.example.yuehu.translator.MainActivity"/>
-
         </activity>
     </application>
 
