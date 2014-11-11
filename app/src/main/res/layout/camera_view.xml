@@ -45,31 +45,40 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="37dp" />
+    <ImageView
+        tools:ignore="ContentDescription"
+        android:id="@+id/cropped"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/translateInfo"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+    />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Display Input Text Here"
-        android:textColor = "#ffffff"
-        android:textSize = "30sp"
-        android:typeface="serif"
-        android:id="@+id/displayInput"
-        android:layout_above="@+id/displayOutput"
-        android:layout_alignLeft="@+id/translateInfo"
-        android:layout_marginBottom="66dp" />
+    <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Display Input Text Here"
+            android:textColor = "#ffffff"
+            android:textSize = "30sp"
+            android:typeface="serif"
+            android:id="@+id/displayInput"
+            android:layout_above="@+id/displayOutput"
+            android:layout_alignLeft="@+id/translateInfo"
+            android:layout_marginBottom="66dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Display Translated Text Here"
-        android:textColor = "#ffffff"
-        android:textSize = "30sp"
-        android:typeface="serif"
-        android:id="@+id/displayOutput"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/displayInput" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Display Translated Text Here"
+            android:textColor = "#ffffff"
+            android:textSize = "30sp"
+            android:typeface="serif"
+            android:id="@+id/displayOutput"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/displayInput" />
+    -->
 
 </RelativeLayout>

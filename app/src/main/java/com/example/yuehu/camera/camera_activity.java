@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -51,6 +52,8 @@ public class camera_activity extends Activity{
            //TODO:Cropped picture is now new picture. DO I SAVE IT TO PICTURE AGAIN? FIGURE THIS OUT
             Bundle extras = data.getExtras();
             Bitmap croppedPicture = extras.getParcelable("data");   //gets the cropped picture from the data
+            ImageView displayed = (ImageView)findViewById(R.id.cropped);
+            displayed.setImageBitmap(croppedPicture);
        }
     }
 
