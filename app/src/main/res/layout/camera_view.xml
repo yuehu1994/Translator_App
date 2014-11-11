@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:orientation="vertical" tools:context=".Camera">
-
-    <!-- Yue rewrote this to a linear layout! Its nicer and more
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/wallpaper" tools:context=".Camera">
+    <!-- Yue rewrote this to a scroll layout! Its nicer and more
      compatible with different phone sizes.-->
-
-    <ImageView
-        tools:ignore="ContentDescription"
-        android:id="@+id/background"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/wallpaper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,6 +22,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
 
+    <ImageView
+        tools:ignore="ContentDescription"
+        android:id="@+id/cropped"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/translateInfo"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        />
 
     <Button
         android:layout_width="200dp"
@@ -42,17 +43,10 @@
         android:enabled="true"
         android:background="@drawable/rect_button"
         android:onClick="cameraClick"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/cropped"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="37dp" />
-    <ImageView
-        tools:ignore="ContentDescription"
-        android:id="@+id/cropped"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/translateInfo"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
-    />
+        android:layout_marginTop="40dp"
+        />
 
     <!--
         <TextView
@@ -82,3 +76,4 @@
     -->
 
 </RelativeLayout>
+<!--</ScrollView>-->
