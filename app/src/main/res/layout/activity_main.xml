@@ -156,6 +156,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="@string/goButton"
+        android:textColor="#ffffff"
         android:typeface="serif"
         android:textSize="30sp"
         android:id="@+id/go_button"

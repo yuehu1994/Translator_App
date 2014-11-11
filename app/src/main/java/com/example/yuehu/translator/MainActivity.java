@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.yuehu.CameraActivity.Camera;
+import com.example.yuehu.camera.camera_activity;
 
 /**
 This file contains all logic for the main view where languages are first selected.
@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
     private String inputLanguage = "none";
     /* the language used in translating the image text */
     private String outputLanguage = "none";
-    /* TODO: find out what this is*/
+    /* Rachel-Just a global String I used to pass param to other view. Not that important*/
     public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
 
     /* getters for the languages */
@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
         }
         /* both languages selected, launch camera view */
         else{
-            Intent intent = new Intent(this, Camera.class);
+            Intent intent = new Intent(this, camera_activity.class);
             String[] message = new String[]{inputLanguage,outputLanguage};      //simple parse in next view
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);

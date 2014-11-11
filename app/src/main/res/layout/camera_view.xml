@@ -6,40 +6,70 @@
     <!-- Yue rewrote this to a linear layout! Its nicer and more
      compatible with different phone sizes.-->
 
-    <TextView
+    <ImageView
+        tools:ignore="ContentDescription"
+        android:id="@+id/background"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/wallpaper"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize = "40sp"
-        android:typeface="serif"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/inputText"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize = "40sp"
-        android:typeface="serif"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/inputText"
-        android:id="@+id/outputText"
-        />
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:typeface="serif"
         android:textSize="30sp"
+        android:text="just to see"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/translateInfo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:typeface="serif"
+        android:textSize="30sp"
+        android:text="Take Picture"
+        android:textColor="#ffffff"
         android:id="@+id/go_button"
         android:clickable="true"
         android:enabled="true"
-        android:background="@drawable/circle_button"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft = "135dp"
-        android:onClick="backButton"
-     />
+        android:background="@drawable/rect_button"
+        android:onClick="cameraClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Display Input Text Here"
+        android:textColor = "#ffffff"
+        android:textSize = "30sp"
+        android:typeface="serif"
+        android:id="@+id/displayInput"
+        android:layout_above="@+id/displayOutput"
+        android:layout_alignLeft="@+id/translateInfo"
+        android:layout_marginBottom="66dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Display Translated Text Here"
+        android:textColor = "#ffffff"
+        android:textSize = "30sp"
+        android:typeface="serif"
+        android:id="@+id/displayOutput"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/displayInput" />
 
 
 </RelativeLayout>
