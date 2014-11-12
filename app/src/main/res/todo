@@ -1,6 +1,4 @@
 TODO:
-Save state stuff on screen rotation
-Scroll wheel on screen rotation
-Crop more things
-Get rid of saving on camera capture
-Disable or figure out back button on camera/crop
+Saved cropped image to state
+white space with scrollview
+Get backgrounds to load

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.yuehu.camera.camera_activity;
@@ -16,6 +17,8 @@ This file contains all logic for the main view where languages are first selecte
  */
 public class MainActivity extends Activity {
 
+    RelativeLayout mainLayout;
+
     /* Global variables - be careful of changing*/
 
     /* the language of the image*/
@@ -24,6 +27,11 @@ public class MainActivity extends Activity {
     private String outputLanguage = "none";
     /* Rachel-Just a global String I used to pass param to other view. Not that important*/
     public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
+
+    static final String STATE_INPUT = "inputLanguage";
+    static final String STATE_OUTPUT = "outputLanguage";
+
+
 
     /* getters for the languages */
     public String getInputLanguage(){
@@ -45,10 +53,10 @@ public class MainActivity extends Activity {
                inputLanguage = "english";
                 break;
             case R.id.radioButtonFromFrench:
-                    inputLanguage = "french";
+                inputLanguage = "french";
                 break;
             case R.id.radioButtonFromSpanish:
-                    inputLanguage = "spanish";
+                inputLanguage = "spanish";
                 break;
         }
     }
@@ -97,12 +105,34 @@ public class MainActivity extends Activity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);                                     //
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inputLanguage = "none";
         outputLanguage = "none";
+        /*mainLayout=(RelativeLayout)findViewById(R.id.myLayout);
+        mainLayout.setBackgroundResource(R.drawable.wallpaper);*/
+
     }
 
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState);
+
+        // Restore state members from saved instance
+        inputLanguage = savedInstanceState.getString(STATE_INPUT);
+        outputLanguage = savedInstanceState.getString(STATE_OUTPUT);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putString(STATE_INPUT, inputLanguage);
+        savedInstanceState.putString(STATE_OUTPUT, outputLanguage);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
