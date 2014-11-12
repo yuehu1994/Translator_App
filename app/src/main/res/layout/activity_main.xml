@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -7,7 +10,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    android:background = "#000000">
+    android:background = "@drawable/wallpaper">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,6 +20,9 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp" tools:context=".MainActivity">
+
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -169,3 +175,4 @@
         android:onClick="toCamera"/>
 </RelativeLayout>
 </ScrollView>
+</LinearLayout>

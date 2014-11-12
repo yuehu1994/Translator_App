@@ -42,7 +42,7 @@ public class camera_activity extends Activity{
             startActivityForResult(captureIntent, CAMERA_CAPTURE);
         }
         //If device has no camera... catch the exception
-        catch(ActivityNotFoundException anfe){
+        catch(ActivityNotFoundException e){
             String errorMessage = "Device does not support capturing images.";
             Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
             toast.show();
@@ -65,14 +65,9 @@ public class camera_activity extends Activity{
            //TODO:Cropped picture is now new picture. DO I SAVE IT TO PICTURE AGAIN? FIGURE THIS OUT
            try {
                Bundle extras = data.getExtras();
-           /*
-            Bitmap croppedPicture = extras.getParcelable("data");   //gets the cropped picture from the data
-            ImageView displayed = (ImageView)findViewById(R.id.cropped);
-            displayed.setImageBitmap(croppedPicture);
-           */
                croppedPicture = extras.getParcelable("data");   //gets the cropped picture from the data
                ImageView displayed = (ImageView) findViewById(R.id.cropped);
-               displayed.setImageBitmap(croppedPicture);
+               displayed.setImageBitmap(croppedPicture);//Just sets old screen to new cropped. Delete stage 4
            }
            catch (NullPointerException exception) {
                String errorMessage = "Please take a picture to translate.";
@@ -95,6 +90,7 @@ public class camera_activity extends Activity{
             cropIntent.putExtra("aspectX", 0);
             cropIntent.putExtra("aspectY", 0);
             //indicate output X and Y
+
             cropIntent.putExtra("outputX", 256);
             cropIntent.putExtra("outputY", 256);
 
@@ -124,6 +120,8 @@ public class camera_activity extends Activity{
         ((ImageView)findViewById(R.id.cropped)).setImageBitmap(croppedPicture);
     }
 
+
+    //Screen rotation breaks
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
