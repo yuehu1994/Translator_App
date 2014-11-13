@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--Yue Hu Wrote this Code-->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <gradient android:startColor="#ff9ca19e"
-        android:endColor="#DD000000"/>
-    <stroke android:width="3dp" android:color="#fff" />
-</shape>
+
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <gradient android:startColor="#ff9ca19e"
+                android:endColor="#DD000000"/>
+            <stroke android:width="3dp" android:color="#fff" />
+        </shape>

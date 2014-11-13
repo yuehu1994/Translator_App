@@ -41,16 +41,16 @@
         />
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:typeface="serif"
         android:textSize="30sp"
-        android:text="Take Picture"
+        android:text="@string/goButton"
         android:textColor="#ffffff"
         android:id="@+id/go_button"
         android:clickable="true"
         android:enabled="true"
-        android:background="@drawable/rect_button"
+        android:background="@drawable/circle_button"
         android:onClick="cameraClick"
         android:layout_below="@id/cropped"
         android:layout_centerHorizontal="true"

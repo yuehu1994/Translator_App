@@ -161,7 +161,7 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="@string/goButton"
+        android:text="OK!"
         android:textColor="#ffffff"
         android:typeface="serif"
         android:textSize="30sp"

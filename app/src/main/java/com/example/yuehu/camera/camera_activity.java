@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
 import android.content.ActivityNotFoundException;
-import com.example.yuehu.translator.MainActivity;
 import com.example.yuehu.translator.R;
 
 
@@ -24,7 +22,6 @@ public class camera_activity extends Activity{
     private Uri picture;
     private Bitmap croppedPicture;
 
-    //keep track of camera capture intent
     final int CAMERA_CAPTURE = 1;
     final int PIC_CROP = 2;//just a param pass in since only 2 options we don't have to check value
 
@@ -116,7 +113,9 @@ public class camera_activity extends Activity{
         String[] passedInfo = intent.getStringArrayExtra("MainActivity.MESSAGE");
         inputString = passedInfo[0];
         outputString = passedInfo[1];
-        ((TextView)findViewById(R.id.translateInfo)).setText("Translate "+ inputString + " to " + outputString);
+        String upperInput = inputString.substring(0,1).toUpperCase()+inputString.substring(1);
+        String upperOutput = outputString.substring(0,1).toUpperCase()+outputString.substring(1);
+        ((TextView)findViewById(R.id.translateInfo)).setText("Translate "+ upperInput + " to " + upperOutput);
         ((ImageView)findViewById(R.id.cropped)).setImageBitmap(croppedPicture);
     }
 

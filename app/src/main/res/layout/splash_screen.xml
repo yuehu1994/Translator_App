@@ -5,16 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".splash_activity">
 
-
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/splashBackground"
         android:background = "@drawable/gradient_rect"/>
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/splashIcon"
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
