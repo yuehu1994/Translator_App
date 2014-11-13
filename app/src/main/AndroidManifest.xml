@@ -26,12 +26,11 @@
             android:label="@string/language">
          </activity>
 
-
-
         <!--camera view - child of above activity-->
         <activity
             android:name="com.example.yuehu.camera.camera_activity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name = "android.support.PARENT_ACTIVITY"
                 android:value = "com.example.yuehu.translator.MainActivity"/>

@@ -16,22 +16,18 @@ import com.example.yuehu.camera.camera_activity;
 This file contains all logic for the main view where languages are first selected.
  */
 public class MainActivity extends Activity {
-
-    RelativeLayout mainLayout;
-
     /* Global variables - be careful of changing*/
 
     /* the language of the image*/
     private String inputLanguage = "none";
     /* the language used in translating the image text */
     private String outputLanguage = "none";
-    /* Rachel-Just a global String I used to pass param to other view. Not that important*/
+    /* global String used to pass param to other view */
     public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
 
+    /* strings for saving state - identifies the class variable being saved */
     static final String STATE_INPUT = "inputLanguage";
     static final String STATE_OUTPUT = "outputLanguage";
-
-
 
     /* getters for the languages */
     public String getInputLanguage(){
@@ -46,7 +42,7 @@ public class MainActivity extends Activity {
         @param  view
         @return void
         @info   setter function used to update global inputLanguage variable
-     */
+    */
     public void fromSetClick(View view){
         switch(view.getId()){
             case R.id.radioButtonFromEnglish:
@@ -103,14 +99,14 @@ public class MainActivity extends Activity {
         }
 
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inputLanguage = "none";
         outputLanguage = "none";
-        /*mainLayout=(RelativeLayout)findViewById(R.id.myLayout);
-        mainLayout.setBackgroundResource(R.drawable.wallpaper);*/
 
     }
 

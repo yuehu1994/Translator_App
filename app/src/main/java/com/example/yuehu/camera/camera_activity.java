@@ -13,7 +13,6 @@ import android.widget.Toast;
 import android.content.ActivityNotFoundException;
 import com.example.yuehu.translator.R;
 
-
 public class camera_activity extends Activity{
 
     private String inputString;
@@ -86,8 +85,8 @@ public class camera_activity extends Activity{
             //indicate aspect of desired crop
             cropIntent.putExtra("aspectX", 0);
             cropIntent.putExtra("aspectY", 0);
-            //indicate output X and Y
 
+            //indicate output X and Y
             cropIntent.putExtra("outputX", 256);
             cropIntent.putExtra("outputY", 256);
 
