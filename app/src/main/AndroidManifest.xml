@@ -10,16 +10,23 @@
         android:theme="@style/AppTheme"
         >
 
-        <!--main view for app - select languages for translation-->
+        <!--splash screen-->
         <activity
-            android:name="com.example.yuehu.translator.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.yuehu.splash.splash_activity"
+            android:label="@string/splash_view" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--main screen-->
+        <activity
+            android:name="com.example.yuehu.translator.MainActivity"
+            android:label="@string/app_name">
+         </activity>
+
+
 
         <!--camera view - child of above activity-->
         <activity

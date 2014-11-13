@@ -5,6 +5,7 @@ Strings to use instead of hard coding
 -->
     <string name="app_name">Translator</string>
     <string name="camera_view">Camera</string>
+    <string name="splash_view">Splash</string>
     <string name="welcome">Welcome</string>
     <string name="action_settings">Settings</string>
     <string name="translate">Translate:</string>
