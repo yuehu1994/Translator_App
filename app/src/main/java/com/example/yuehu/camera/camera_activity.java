@@ -123,6 +123,7 @@ public class camera_activity extends Activity{
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
+
         savedInstanceState.putString(STATE_INPUT, inputString);
         savedInstanceState.putString(STATE_OUTPUT, outputString);
         savedInstanceState.putParcelable(STATE_PICTURE, picture);
