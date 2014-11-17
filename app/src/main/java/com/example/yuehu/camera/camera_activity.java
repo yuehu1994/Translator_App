@@ -15,21 +15,21 @@ import com.example.yuehu.translator.R;
 
 public class camera_activity extends Activity{
 
-    private String inputString;
+    //private String inputString;
     private String outputString;
     //captured picture uri
-    private Uri picture;
-    private Bitmap croppedPicture;
+    //private Uri picture;
+    //private Bitmap croppedPicture;
 
-    final int CAMERA_CAPTURE = 1;
-    final int PIC_CROP = 2;//just a param pass in since only 2 options we don't have to check value
+    //final int CAMERA_CAPTURE = 1;
+    //final int PIC_CROP = 2;//just a param pass in since only 2 options we don't have to check value
 
 
-    static final String STATE_INPUT = "inputLanguage";
+    //static final String STATE_INPUT = "inputLanguage";
     static final String STATE_OUTPUT = "outputLanguage";
-    static final String STATE_PICTURE = "picture";
-    static final String STATE_CROPPED = "croppedPicture";
-
+    //static final String STATE_PICTURE = "picture";
+    //static final String STATE_CROPPED = "croppedPicture";
+    /*
     public void cameraClick(View view){
         try{
             //use standard intent to capture an image
@@ -44,6 +44,7 @@ public class camera_activity extends Activity{
             toast.show();
         }
     }
+
     //This responds to the startActivity for result
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
        if(requestCode==1){//meaning we are coming back from camera
@@ -102,6 +103,12 @@ public class camera_activity extends Activity{
             toast.show();
         }
     }
+    */
+
+    public void launchRecorder(View view) {
+        return;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,12 +117,12 @@ public class camera_activity extends Activity{
 
         Intent intent = getIntent();
         String[] passedInfo = intent.getStringArrayExtra("MainActivity.MESSAGE");
-        inputString = passedInfo[0];
-        outputString = passedInfo[1];
-        String upperInput = inputString.substring(0,1).toUpperCase()+inputString.substring(1);
+        /*inputString = passedInfo[0];*/
+        outputString = passedInfo[0];
+        /*String upperInput = inputString.substring(0,1).toUpperCase()+inputString.substring(1);*/
         String upperOutput = outputString.substring(0,1).toUpperCase()+outputString.substring(1);
-        ((TextView)findViewById(R.id.translateInfo)).setText("Translate "+ upperInput + " to " + upperOutput);
-        ((ImageView)findViewById(R.id.cropped)).setImageBitmap(croppedPicture);
+        ((TextView)findViewById(R.id.translateInfo)).setText("Translate English" + " to " + upperOutput);
+        /*((ImageView)findViewById(R.id.cropped)).setImageBitmap(croppedPicture);*/
     }
 
 
@@ -123,11 +130,10 @@ public class camera_activity extends Activity{
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
-
-        savedInstanceState.putString(STATE_INPUT, inputString);
+        /*savedInstanceState.putString(STATE_INPUT, inputString);*/
         savedInstanceState.putString(STATE_OUTPUT, outputString);
-        savedInstanceState.putParcelable(STATE_PICTURE, picture);
-        savedInstanceState.putParcelable(STATE_CROPPED, croppedPicture);
+        /*savedInstanceState.putParcelable(STATE_PICTURE, picture);
+        savedInstanceState.putParcelable(STATE_CROPPED, croppedPicture);*/
 
         // Always call the superclass so it can save the view hierarchy state
         super.onSaveInstanceState(savedInstanceState);
@@ -139,10 +145,10 @@ public class camera_activity extends Activity{
         super.onRestoreInstanceState(savedInstanceState);
 
         // Restore state members from saved instance
-        inputString = savedInstanceState.getString(STATE_INPUT);
+        /*inputString = savedInstanceState.getString(STATE_INPUT);*/
         outputString = savedInstanceState.getString(STATE_OUTPUT);
-        picture = savedInstanceState.getParcelable(STATE_PICTURE);
-        croppedPicture = savedInstanceState.getParcelable(STATE_CROPPED);
+        /*picture = savedInstanceState.getParcelable(STATE_PICTURE);
+        croppedPicture = savedInstanceState.getParcelable(STATE_CROPPED);*/
     }
 
 }

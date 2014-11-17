@@ -13,7 +13,9 @@ Strings to use instead of hard coding
     <string name="english">English/Anglais/Inglés</string>
     <string name="french">French/Français/Francés</string>
     <string name="spanish">Spanish/Espagnol/Español</string>
-    <string name="toLabel">To:</string>
+    <string name="chinese">Chinese/中国</string>
+    <string name="afrikaans">Afrikaans</string>
+    <string name="toLabel">Translate to:</string>
     <string name="goButton">Go!</string>
 
 </resources>

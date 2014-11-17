@@ -19,20 +19,20 @@ public class MainActivity extends Activity {
     /* Global variables - be careful of changing*/
 
     /* the language of the image*/
-    private String inputLanguage = "none";
+    /*private String inputLanguage = "none";*/
     /* the language used in translating the image text */
     private String outputLanguage = "none";
     /* global String used to pass param to other view */
     public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
 
     /* strings for saving state - identifies the class variable being saved */
-    static final String STATE_INPUT = "inputLanguage";
+    /*static final String STATE_INPUT = "inputLanguage";*/
     static final String STATE_OUTPUT = "outputLanguage";
 
     /* getters for the languages */
-    public String getInputLanguage(){
+    /*public String getInputLanguage(){
         return inputLanguage;
-    }
+    }*/
 
     public String getOutputLanguage(){
         return outputLanguage;
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         @param  view
         @return void
         @info   setter function used to update global inputLanguage variable
-    */
+
     public void fromSetClick(View view){
         switch(view.getId()){
             case R.id.radioButtonFromEnglish:
@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
                 break;
         }
     }
-
+    */
     /*
         @param  view
         @return void
@@ -73,6 +73,12 @@ public class MainActivity extends Activity {
             case R.id.radioButtonToSpanish:
                 outputLanguage="spanish";
                 break;
+            case R.id.radioButtonToChinese:
+                outputLanguage="chinese";
+                break;
+            case R.id.radioButtonToAfrikaans:
+                outputLanguage="afrikaans";
+                break;
         }
     }
 
@@ -83,9 +89,9 @@ public class MainActivity extends Activity {
     */
     public void toCamera(View view){
         /* Error checking - user hasn't selected either or just one input language */
-        if(getInputLanguage().equals("none") || getOutputLanguage().equals("none")){
+        if(getOutputLanguage().equals("none")){
             Context context = getApplicationContext();
-            CharSequence toastText = "Please select two languages";
+            CharSequence toastText = "Please select a language";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context,toastText,duration);
             toast.show();
@@ -93,7 +99,8 @@ public class MainActivity extends Activity {
         /* both languages selected, launch camera view */
         else{
             Intent intent = new Intent(this, camera_activity.class);
-            String[] message = new String[]{inputLanguage,outputLanguage};      //simple parse in next view
+            /*String[] message = new String[]{inputLanguage,outputLanguage}; */     //simple parse in next view
+            String[] message = new String[]{outputLanguage};
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         }
@@ -105,7 +112,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        inputLanguage = "none";
+        /*inputLanguage = "none";*/
         outputLanguage = "none";
 
     }
@@ -116,14 +123,14 @@ public class MainActivity extends Activity {
         super.onRestoreInstanceState(savedInstanceState);
 
         // Restore state members from saved instance
-        inputLanguage = savedInstanceState.getString(STATE_INPUT);
+        /*inputLanguage = savedInstanceState.getString(STATE_INPUT);*/
         outputLanguage = savedInstanceState.getString(STATE_OUTPUT);
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
-        savedInstanceState.putString(STATE_INPUT, inputLanguage);
+        /*savedInstanceState.putString(STATE_INPUT, inputLanguage);*/
         savedInstanceState.putString(STATE_OUTPUT, outputLanguage);
 
         // Always call the superclass so it can save the view hierarchy state
