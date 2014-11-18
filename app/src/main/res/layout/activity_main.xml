@@ -21,9 +21,6 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp" tools:context=".MainActivity">
 
-
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +35,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"/>
 
+    <!--
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,10 +96,11 @@
             android:enabled="true"
             android:onClick="fromSetClick"/>
     </RadioGroup>
+    -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/translateGroup"
+        android:layout_below="@+id/welcome_label"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/toLabel"
         android:textSize="30sp"
@@ -156,7 +155,32 @@
             android:clickable="true"
             android:enabled="true"
             android:onClick="toSetClick"/>
-
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chinese"
+            android:typeface="serif"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/radioButtonToChinese"
+            android:layout_marginLeft="35dp"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:onClick="toSetClick"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/afrikaans"
+            android:typeface="serif"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:id="@+id/radioButtonToAfrikaans"
+            android:layout_marginLeft="35dp"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:onClick="toSetClick"/>
     </RadioGroup>
     <Button
         android:layout_width="100dp"
