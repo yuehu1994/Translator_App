@@ -10,9 +10,9 @@ Strings to use instead of hard coding
     <string name="welcome">Welcome</string>
     <string name="action_settings">Settings</string>
     <string name="translate">Translate:</string>
-    <string name="english">English/Anglais/Inglés</string>
-    <string name="french">French/Français/Francés</string>
-    <string name="spanish">Spanish/Espagnol/Español</string>
+    <string name="english">German/Deutsch</string>
+    <string name="french">French/Français</string>
+    <string name="spanish">Spanish/Español</string>
     <string name="chinese">Chinese/中国</string>
     <string name="afrikaans">Afrikaans</string>
     <string name="toLabel">Translate to:</string>

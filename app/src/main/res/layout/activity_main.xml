@@ -123,7 +123,7 @@
             android:typeface="serif"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:id="@+id/radioButtonToEnglish"
+            android:id="@+id/radioButtonToGerman"
             android:layout_marginLeft="35dp"
             android:checked="false"
             android:clickable="true"
@@ -194,9 +194,9 @@
         android:enabled="true"
         android:background="@drawable/circle_button"
         android:layout_below="@+id/toGroup"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="110dp"
         android:layout_centerHorizontal="true"
-        android:onClick="toCamera"/>
+        android:onClick="toRecorder"/>
 </RelativeLayout>
 </ScrollView>
 </LinearLayout>

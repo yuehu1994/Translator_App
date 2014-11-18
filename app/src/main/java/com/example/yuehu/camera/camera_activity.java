@@ -17,6 +17,7 @@ public class camera_activity extends Activity{
 
     //private String inputString;
     private String outputString;
+    private String spokenString;
     //captured picture uri
     //private Uri picture;
     //private Bitmap croppedPicture;
@@ -27,6 +28,7 @@ public class camera_activity extends Activity{
 
     //static final String STATE_INPUT = "inputLanguage";
     static final String STATE_OUTPUT = "outputLanguage";
+    static final String STATE_TEXT = "spokenString";
     //static final String STATE_PICTURE = "picture";
     //static final String STATE_CROPPED = "croppedPicture";
     /*
@@ -105,9 +107,6 @@ public class camera_activity extends Activity{
     }
     */
 
-    public void launchRecorder(View view) {
-        return;
-    }
 
 
     @Override
@@ -119,9 +118,12 @@ public class camera_activity extends Activity{
         String[] passedInfo = intent.getStringArrayExtra("MainActivity.MESSAGE");
         /*inputString = passedInfo[0];*/
         outputString = passedInfo[0];
+        spokenString = passedInfo[1];
         /*String upperInput = inputString.substring(0,1).toUpperCase()+inputString.substring(1);*/
         String upperOutput = outputString.substring(0,1).toUpperCase()+outputString.substring(1);
         ((TextView)findViewById(R.id.translateInfo)).setText("Translate English" + " to " + upperOutput);
+        ((TextView)findViewById(R.id.displayInput)).setText(spokenString);
+
         /*((ImageView)findViewById(R.id.cropped)).setImageBitmap(croppedPicture);*/
     }
 
@@ -132,6 +134,7 @@ public class camera_activity extends Activity{
         // Save the user's current game state
         /*savedInstanceState.putString(STATE_INPUT, inputString);*/
         savedInstanceState.putString(STATE_OUTPUT, outputString);
+        savedInstanceState.putString(STATE_TEXT,spokenString);
         /*savedInstanceState.putParcelable(STATE_PICTURE, picture);
         savedInstanceState.putParcelable(STATE_CROPPED, croppedPicture);*/
 
@@ -147,6 +150,7 @@ public class camera_activity extends Activity{
         // Restore state members from saved instance
         /*inputString = savedInstanceState.getString(STATE_INPUT);*/
         outputString = savedInstanceState.getString(STATE_OUTPUT);
+        spokenString = savedInstanceState.getString(STATE_TEXT);
         /*picture = savedInstanceState.getParcelable(STATE_PICTURE);
         croppedPicture = savedInstanceState.getParcelable(STATE_CROPPED);*/
     }
