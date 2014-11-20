@@ -33,7 +33,7 @@ public class camera_activity extends Activity{
         spokenString = passedInfo[1];
 
         String upperOutput = outputString.substring(0,1).toUpperCase()+outputString.substring(1);
-        ((TextView)findViewById(R.id.translateInfo)).setText("Translate English" + " to " + upperOutput);
+        ((TextView)findViewById(R.id.translateTo)).setText("To " + upperOutput +":");
         ((TextView)findViewById(R.id.displayInput)).setText(spokenString);
     }
 

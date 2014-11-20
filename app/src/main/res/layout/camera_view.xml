@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:typeface="serif"
-        android:textSize="30sp"
-        android:text="just to see"
+        android:textSize="40sp"
+        android:text="Translating:"
         android:textColor="#ffffff"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
@@ -32,7 +32,7 @@
         android:layout_alignParentLeft="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Display Input Text Here"
@@ -41,24 +41,44 @@
         android:typeface="serif"
         android:id="@+id/displayInput"
         android:layout_below="@+id/translateInfo"
-        android:layout_alignLeft="@+id/translateInfo"
-        android:layout_marginTop="66dp" />
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
 
     <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:typeface="serif"
+        android:textSize="40sp"
+        android:text="To:"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/translateTo"
+        android:layout_below="@id/displayInput"/>
+
+
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Display Translated Text Here"
         android:textColor = "#ffffff"
         android:textSize = "30sp"
         android:typeface="serif"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/displayOutput"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/translateInfo"
-        android:layout_below="@id/displayInput"
+        android:background="@drawable/rect_button"
+        android:padding="20dp"
+        android:layout_below="@id/translateTo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
     />
-
 
 </RelativeLayout>
 </ScrollView>

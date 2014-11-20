@@ -32,8 +32,7 @@
         android:id="@+id/welcome_label"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"/>
+        android:padding="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,12 +40,12 @@
         android:layout_below="@+id/welcome_label"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/toLabel"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:textColor="#ffffff"
         android:typeface="serif"
         android:id="@+id/to_label"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="20dp"/>
 
     <RadioGroup
         android:layout_width="fill_parent"
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/english"
             android:typeface="serif"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textColor="#ffffff"
             android:id="@+id/radioButtonToGerman"
             android:layout_marginLeft="35dp"
@@ -72,7 +71,7 @@
             android:layout_height="wrap_content"
             android:text="@string/french"
             android:typeface="serif"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textColor="#ffffff"
             android:id="@+id/radioButtonToFrench"
             android:layout_marginLeft="35dp"
@@ -85,7 +84,7 @@
             android:layout_height="wrap_content"
             android:text="@string/spanish"
             android:typeface="serif"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textColor="#ffffff"
             android:id="@+id/radioButtonToSpanish"
             android:layout_marginLeft="35dp"
@@ -98,7 +97,7 @@
             android:layout_height="wrap_content"
             android:text="@string/chinese"
             android:typeface="serif"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textColor="#ffffff"
             android:id="@+id/radioButtonToChinese"
             android:layout_marginLeft="35dp"
@@ -111,7 +110,7 @@
             android:layout_height="wrap_content"
             android:text="@string/afrikaans"
             android:typeface="serif"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textColor="#ffffff"
             android:id="@+id/radioButtonToAfrikaans"
             android:layout_marginLeft="35dp"
@@ -121,9 +120,9 @@
             android:onClick="toSetClick"/>
     </RadioGroup>
     <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="OK!"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:text="Go!"
         android:textColor="#ffffff"
         android:typeface="serif"
         android:textSize="30sp"
@@ -132,7 +131,7 @@
         android:enabled="true"
         android:background="@drawable/circle_button"
         android:layout_below="@+id/toGroup"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:onClick="toRecorder"/>
 </RelativeLayout>
