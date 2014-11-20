@@ -35,19 +35,13 @@ public class MainActivity extends Activity {
     public final static String EXTRA_MESSAGE = "MainActivity.MESSAGE";
     private ListView listOfText;
     private Dialog select_result;
-    /* strings for saving state - identifies the class variable being saved */
-    /*static final String STATE_INPUT = "inputLanguage";*/
+    /* string for saving state - identifies the class variable being saved */
     static final String STATE_OUTPUT = "outputLanguage";
     static final int VOICE_CODE = 1;
-    /* getters for the languages */
-    /*public String getInputLanguage(){
-        return inputLanguage;
-    }*/
 
     public String getOutputLanguage(){
         return outputLanguage;
     }
-
 
     /*
         @param  view
@@ -88,7 +82,7 @@ public class MainActivity extends Activity {
             Toast toast = Toast.makeText(context,toastText,duration);
             toast.show();
         }
-        /* both languages selected, launch camera view */
+        /* a language selected, launch camera view */
         else{
             startVoice();
         }
@@ -103,6 +97,7 @@ public class MainActivity extends Activity {
         voiceIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         startActivityForResult(voiceIntent, VOICE_CODE);
     }
+
     /*
     This function handles the return from voice
      */
@@ -112,7 +107,7 @@ public class MainActivity extends Activity {
             try {
                 final ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
-                //Dialog curtosy of http://www.learn2crack.com/2013/12/android-speech-recognition-example.html
+                //Dialog courtesy of http://www.learn2crack.com/2013/12/android-speech-recognition-example.html
                 select_result = new Dialog(MainActivity.this);  //creating new dialog
                 select_result.setContentView(R.layout.dialog_box); //set up dialog box
                 select_result.setTitle("Select Text");

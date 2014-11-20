@@ -35,68 +35,6 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"/>
 
-    <!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/translate"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:typeface="serif"
-        android:id="@+id/translate_label"
-        android:layout_below="@+id/welcome_label"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"/>
-
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/translate_label"
-        android:id="@+id/translateGroup">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/english"
-            android:typeface="serif"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:id="@+id/radioButtonFromEnglish"
-            android:layout_marginLeft="35dp"
-            android:checked="false"
-            android:clickable="true"
-            android:enabled="true"
-            android:onClick="fromSetClick"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/french"
-            android:typeface="serif"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:id="@+id/radioButtonFromFrench"
-            android:layout_marginLeft="35dp"
-            android:checked="false"
-            android:enabled="true"
-            android:clickable="true"
-            android:onClick="fromSetClick"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/spanish"
-            android:typeface="serif"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:id="@+id/radioButtonFromSpanish"
-            android:layout_marginLeft="35dp"
-            android:checked="false"
-            android:clickable="true"
-            android:enabled="true"
-            android:onClick="fromSetClick"/>
-    </RadioGroup>
-    -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

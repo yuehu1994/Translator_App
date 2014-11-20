@@ -30,34 +30,6 @@
         android:id="@+id/translateInfo"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
-    <!--
-    <ImageView
-        tools:ignore="ContentDescription"
-        android:id="@+id/cropped"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/translateInfo"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
-        />
-    -->
-    <!--
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:typeface="serif"
-        android:textSize="30sp"
-        android:text="@string/goButton"
-        android:textColor="#ffffff"
-        android:id="@+id/go_button"
-        android:clickable="true"
-        android:enabled="true"
-        android:background="@drawable/circle_button"
-        android:onClick="launchRecorder"
-        android:layout_below="@id/displayInput"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        />
-    -->
 
     <TextView
         android:layout_width="wrap_content"
