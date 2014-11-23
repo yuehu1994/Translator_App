@@ -18,9 +18,11 @@ import android.speech.RecognizerIntent;
 import android.content.pm.ResolveInfo;
 import java.util.ArrayList;
 import java.util.List;
-
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import com.example.yuehu.camera.camera_activity;
+
 
 /**
 This file contains all logic for the main view where languages are first selected.
@@ -68,6 +70,18 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    public boolean internetConnection(){
+
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            return true;
+        }
+        else
+            return false;
+    }
     /*
         @param  view
         @return void
@@ -145,7 +159,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*inputLanguage = "none";*/
         outputLanguage = "none";
         /*Check to see if recognition is present in device
         * If not present, display toast and disable the button*/
@@ -159,10 +172,18 @@ public class MainActivity extends Activity {
             Toast toast = Toast.makeText(context,toastText,duration);
             toast.show();
         }
-
-
+        //make sure internet connection is available
+        if(!internetConnection()){
+            (findViewById(R.id.go_button)).setEnabled(false);
+            Context context = getApplicationContext();
+            CharSequence toastText = "No internet access";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context,toastText,duration);
+            toast.show();
+        }
 
     }
+
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
