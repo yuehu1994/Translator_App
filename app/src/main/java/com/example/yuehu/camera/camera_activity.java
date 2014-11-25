@@ -26,7 +26,7 @@ public class camera_activity extends Activity{
 
 
     //WE NEED TO GET A KEY FOR THIS TO WORK
-    private void translate(){
+    public void translate(){
 
         try {
             /*
@@ -36,10 +36,10 @@ public class camera_activity extends Activity{
             ALSO I DONT KNOW WHAT SET HTTP REFERRER DOES BUT LOOKS FROM MY EXAMPLES YOU CAN PUT ANYTHING...
              */
 
-            GoogleAPI.setHttpReferrer("http://android-er.blogspot.com/");
-            GoogleAPI.setKey("AIzaSyBB6Ovr5iGWs9xgx08LmzbE-tTlWLdLmII");
 
-            translatedString=Translate.DEFAULT.execute("hello world", Language.ENGLISH, Language.FRENCH);
+            GoogleAPI.setHttpReferrer("http://www.google.com");
+            GoogleAPI.setKey("AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU");
+            translatedString=Translate.DEFAULT.execute(spokenString, Language.ENGLISH, getNewLanguage());
             ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
         }
         catch(Exception e){
@@ -51,6 +51,31 @@ public class camera_activity extends Activity{
 
     }
 
+    public Language getNewLanguage(){
+        Language newLanguage;
+        if(outputString.equals("german")){
+            newLanguage = Language.GERMAN;
+        }
+        else if(outputString.equals("french")){
+            newLanguage = Language.FRENCH;
+        }
+        else if(outputString.equals("spanish")){
+            newLanguage = Language.SPANISH;
+        }
+        else if(outputString.equals("chinese")){
+            newLanguage = Language.CHINESE;
+        }
+        else if(outputString.equals("afrikaans")){
+            newLanguage = Language.AFRIKAANS;
+        }
+        else {
+            String errorMessage = "Language Selection Error";
+            Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
+            toast.show();
+            return null;
+        }
+        return newLanguage;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
