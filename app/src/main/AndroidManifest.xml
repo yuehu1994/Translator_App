@@ -8,11 +8,10 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-
         >
-        <meta-data
+       <!-- <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU"/>
+            android:value="AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU"/>-->
         <!--splash screen-->
         <activity
             android:name="com.example.yuehu.splash.splash_activity"

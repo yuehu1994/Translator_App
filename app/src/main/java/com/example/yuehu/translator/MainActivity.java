@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
                 outputLanguage="chinese";
                 break;
             case R.id.radioButtonToAfrikaans:
-                outputLanguage="afrikaans";
+                outputLanguage="greek";
                 break;
         }
     }

@@ -10,9 +10,12 @@ import android.widget.Toast;
 import android.content.ActivityNotFoundException;
 import com.example.yuehu.translator.R;
 
-import com.google.api.translate.Language;
-import com.google.api.translate.Translate;
-import com.google.api.GoogleAPI;
+//import com.google.api.translate.Language;
+//import com.google.api.translate.Translate;
+//import com.google.api.GoogleAPI;
+
+import com.memetix.mst.language.Language;
+import com.memetix.mst.translate.Translate;
 
 
 public class camera_activity extends Activity{
@@ -36,17 +39,19 @@ public class camera_activity extends Activity{
             ALSO I DONT KNOW WHAT SET HTTP REFERRER DOES BUT LOOKS FROM MY EXAMPLES YOU CAN PUT ANYTHING...
              */
 
-
-            GoogleAPI.setHttpReferrer("http://www.google.com");
-            GoogleAPI.setKey("AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU");
-            translatedString=Translate.DEFAULT.execute(spokenString, Language.ENGLISH, getNewLanguage());
+  //          GoogleAPI.setHttpReferrer("http://www.google.com");
+  //          GoogleAPI.setKey("AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU");
+            Translate.setClientId("TranslatorYueHu");
+            Translate.setClientSecret("YlRnOgykvJljxs2oleRyp6wVW0M8HSV/goQXdYICI0s=");
+            translatedString=Translate.execute(spokenString, Language.ENGLISH, Language.FRENCH);
             ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
         }
         catch(Exception e){
+            e.printStackTrace();
             String errorMessage = "Translation Error";
             Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
             toast.show();
-            System.out.print(e.getMessage());
+
         }
 
     }
@@ -63,10 +68,10 @@ public class camera_activity extends Activity{
             newLanguage = Language.SPANISH;
         }
         else if(outputString.equals("chinese")){
-            newLanguage = Language.CHINESE;
+            newLanguage = Language.CHINESE_TRADITIONAL;
         }
-        else if(outputString.equals("afrikaans")){
-            newLanguage = Language.AFRIKAANS;
+        else if(outputString.equals("greek")){
+            newLanguage = Language.GREEK;
         }
         else {
             String errorMessage = "Language Selection Error";

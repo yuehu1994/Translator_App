@@ -14,7 +14,7 @@ Strings to use instead of hard coding
     <string name="french">French/Français</string>
     <string name="spanish">Spanish/Español</string>
     <string name="chinese">Chinese/中国</string>
-    <string name="afrikaans">Afrikaans</string>
+    <string name="greek">Greek/ελληνικά</string>
     <string name="toLabel">Translate to:</string>
     <string name="goButton">Go!</string>
 
