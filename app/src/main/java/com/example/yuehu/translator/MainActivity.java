@@ -1,8 +1,10 @@
 package com.example.yuehu.translator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView;
@@ -81,6 +84,44 @@ public class MainActivity extends Activity {
         }
         else
             return false;
+    }
+
+    public void toType(View view){
+        if(getOutputLanguage().equals("none")){
+            Context context = getApplicationContext();
+            CharSequence toastText = "Please select a language";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context,toastText,duration);
+            toast.show();
+        }
+        else{
+            startType();
+        }
+    }
+
+    public void startType(){
+        final Intent intent = new Intent(this, camera_activity.class);
+        AlertDialog.Builder inputBox = new AlertDialog.Builder(this);
+        inputBox.setTitle("Please Enter Phrase");
+        final EditText userInput = new EditText(this);
+        inputBox.setView(userInput);
+        inputBox.setPositiveButton("Ok", new DialogInterface.OnClickListener() { //user enters text
+            public void onClick(DialogInterface dialog, int button) {
+                textMessage = userInput.getText().toString();
+                String[] message = new String[]{outputLanguage, textMessage};       //pass to new intent
+                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
+            }
+        });
+
+        inputBox.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int button) {
+                //do nothing-cancel
+            }
+        });
+
+        inputBox.show();
+
     }
     /*
         @param  view
@@ -165,7 +206,7 @@ public class MainActivity extends Activity {
         PackageManager manager = getPackageManager();
         List<ResolveInfo> allActivities = manager.queryIntentActivities(new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH),0);
         if(allActivities.size()==0){
-            (findViewById(R.id.go_button)).setEnabled(false);
+            (findViewById(R.id.voice_button)).setEnabled(false);
             Context context = getApplicationContext();
             CharSequence toastText = "Voice recognition not present";
             int duration = Toast.LENGTH_LONG;
@@ -174,7 +215,8 @@ public class MainActivity extends Activity {
         }
         //make sure internet connection is available
         if(!internetConnection()){
-            (findViewById(R.id.go_button)).setEnabled(false);
+            (findViewById(R.id.voice_button)).setEnabled(false);
+            (findViewById(R.id.type_button)).setEnabled(false);
             Context context = getApplicationContext();
             CharSequence toastText = "No internet access";
             int duration = Toast.LENGTH_LONG;

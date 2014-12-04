@@ -120,20 +120,39 @@
             android:onClick="toSetClick"/>
     </RadioGroup>
     <Button
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:text="Go!"
+            android:layout_width="150dp"
+            android:layout_height="95dp"
+            android:text="Voice"
+            android:textColor="#ffffff"
+            android:typeface="serif"
+            android:textSize="30sp"
+            android:id="@+id/voice_button"
+            android:clickable="true"
+            android:enabled="true"
+            android:background="@drawable/rect_button"
+            android:layout_below="@+id/toGroup"
+            android:layout_marginTop="70dp"
+            android:onClick="toRecorder"
+            android:layout_marginLeft = "20dp"
+    />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="95dp"
+        android:text="Type"
         android:textColor="#ffffff"
         android:typeface="serif"
         android:textSize="30sp"
-        android:id="@+id/go_button"
+        android:id="@+id/type_button"
         android:clickable="true"
         android:enabled="true"
-        android:background="@drawable/circle_button"
+        android:background="@drawable/rect_button"
         android:layout_below="@+id/toGroup"
-        android:layout_marginTop="80dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="toRecorder"/>
+        android:layout_marginTop="70dp"
+        android:onClick="toType"
+        android:layout_marginRight = "20dp"
+        android:layout_alignParentRight="true"
+        />
+
 </RelativeLayout>
 </ScrollView>
 </LinearLayout>
