@@ -34,69 +34,54 @@ public class camera_activity extends Activity{
     private String apiAndroidKey = "AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU";
     private String outputString;
     private String spokenString;
-    private String translatedString;
+    private String translatedString = "";
     static final String STATE_OUTPUT = "outputLanguage";
     static final String STATE_TEXT = "spokenString";
     static final String STATE_TRANS="translatedString";
 
 
     public void translate(){
-        StringBuilder result = new StringBuilder();
-        InputStream myStream;
-        try {
-/*
-            //GOOGLE TRANSLATE STUFF
-            GoogleAPI.setHttpReferrer("http://www.google.com");
-            GoogleAPI.setKey("AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU");
-            translatedString=Translate.DEFAULT.execute(spokenString, Language.ENGLISH, Language.FRENCH);//replace with getNewLanguage()
-            ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
-*/
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
 
-            //BING TRANSLATE STUFF
+                    StringBuilder result = new StringBuilder();
+                    InputStream myStream;
+                    String newLanguage = getNewLanguage();
+                    String encodedText = URLEncoder.encode(spokenString, "UTF-8");
+                    String urlString = "https://www.googleapis.com/language/translate/v2?key=" + apiBrowserKey + "&source=en" + "&target=" + newLanguage + "&q=" + encodedText;
 
-        /*
-            Translate.setClientId("YueTranslator");
-            Translate.setClientSecret("wgBD1d+s+in4cQyJGyZM+KVhr8E4o2I3Z8xY9+o0mQE=");
-            translatedString=Translate.execute(spokenString, Language.ENGLISH, Language.FRENCH);//replace with getNewLanguage()
-            ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
+                    URL url = new URL(urlString);
+                    HttpsURLConnection connect = (HttpsURLConnection) url.openConnection();
+                    myStream = connect.getInputStream();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(myStream));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        result.append(line);
+                    }
+                    JsonParser myParser = new JsonParser();
+                    JsonElement myElement = myParser.parse(result.toString());
+                    JsonObject myObject = myElement.getAsJsonObject();
+                    translatedString = myObject.get("data").getAsJsonObject().get("translations").getAsJsonArray().get(0).getAsJsonObject().get("translatedText").getAsString();//parses the  json
+                    findViewById(R.id.displayOutput).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
+                        }
+                    });
 
-        */
+                }
+                catch(Exception e){
+                    e.printStackTrace();//get rid of this line when done debugging
+                    //String errorMessage = "Translation Error";
+                    //Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
+                    //toast.show();
 
-        String newLanguage = getNewLanguage();
-        String encodedText = URLEncoder.encode(spokenString,"UTF-8");
-        String urlString = "https://www.googleapis.com/language/translate/v2?key=" +apiBrowserKey + "&source=en"+"&target=" + newLanguage+ "&q=" + encodedText;
-        //((TextView)findViewById(R.id.displayOutput)).setText(urlString);
+                }
+            }
+        }).start();
 
-        URL url = new URL(urlString);
-        HttpsURLConnection connect = (HttpsURLConnection) url.openConnection();
-        //((TextView)findViewById(R.id.displayInput)).setText(Integer.toString(connect.getResponseCode()));
-        if(connect.getResponseCode() != 200) {    //Failed
-            String errorMessage = "Https Connection Failed";
-            Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
-            toast.show();
-            return;
-        }
-        myStream = connect.getInputStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(myStream));
-        String line;
-        while((line = reader.readLine())!= null){
-            result.append(line);
-        }
-        JsonParser myParser = new JsonParser();
-        JsonElement myElement = myParser.parse(result.toString());
-        JsonObject myObject= myElement.getAsJsonObject();
-        translatedString = myObject.get("data").getAsJsonObject().get("translations").getAsJsonArray().get(0).getAsJsonObject().get("translatedText").getAsString();//parses the  json
-        ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
-
-
-        }
-        catch(Exception e){
-            e.getMessage();//get rid of this line when done debugging
-            String errorMessage = "Translation Error";
-            Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
-            toast.show();
-
-        }
 
     }
 
