@@ -6,32 +6,18 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.yuehu.translator.R;
-
-
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.StringTokenizer;
-
 import javax.net.ssl.HttpsURLConnection;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-//import com.google.api.translate.Language;
-//import com.google.api.translate.Translate;
-//import com.google.api.GoogleAPI;
-
-//import com.memetix.mst.language.Language;
-//import com.memetix.mst.translate.Translate;
-
 
 public class camera_activity extends Activity{
-    private String apiBrowserKey = "AIzaSyBZ4Ma9zIaBjTueqRD_pr9of3gsPwdyJ6I";
-    private String apiAndroidKey = "AIzaSyBPhcr6T60YYvDlRJIZQ5xDRMo4UrwkBsU";
+    private String apiBrowserKey = "AIzaSyBZ4Ma9zIaBjTueqRD_pr9of3gsPwdyJ6I"; //api key
     private String outputString;
     private String spokenString;
     private String translatedString = "";
@@ -41,7 +27,7 @@ public class camera_activity extends Activity{
 
 
     public void translate(){
-        new Thread(new Runnable() {
+        new Thread(new Runnable() { // start a new thread to run url query
             @Override
             public void run() {
                 try {
@@ -53,30 +39,27 @@ public class camera_activity extends Activity{
                     String urlString = "https://www.googleapis.com/language/translate/v2?key=" + apiBrowserKey + "&source=en" + "&target=" + newLanguage + "&q=" + encodedText;
 
                     URL url = new URL(urlString);
-                    HttpsURLConnection connect = (HttpsURLConnection) url.openConnection();
-                    myStream = connect.getInputStream();
+                    HttpsURLConnection connect = (HttpsURLConnection) url.openConnection(); //connect
+                    myStream = connect.getInputStream(); //get the input from the connection
                     BufferedReader reader = new BufferedReader(new InputStreamReader(myStream));
                     String line;
                     while ((line = reader.readLine()) != null) {
                         result.append(line);
-                    }
-                    JsonParser myParser = new JsonParser();
+                    }//at this point, result is now holding a json
+                    JsonParser myParser = new JsonParser();//using gson to parse json
                     JsonElement myElement = myParser.parse(result.toString());
                     JsonObject myObject = myElement.getAsJsonObject();
                     translatedString = myObject.get("data").getAsJsonObject().get("translations").getAsJsonArray().get(0).getAsJsonObject().get("translatedText").getAsString();//parses the  json
                     findViewById(R.id.displayOutput).post(new Runnable() {
                         @Override
                         public void run() {
-                            ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);
+                            ((TextView)findViewById(R.id.displayOutput)).setText(translatedString);//post result to here
                         }
                     });
 
                 }
                 catch(Exception e){
-                    e.printStackTrace();//get rid of this line when done debugging
-                    //String errorMessage = "Translation Error";
-                    //Toast toast = Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT);
-                    //toast.show();
+
 
                 }
             }
@@ -84,7 +67,9 @@ public class camera_activity extends Activity{
 
 
     }
-
+/*
+This function is a selector for the new language. Purpose of this is to format the string correctly to queue the url
+ */
     public String getNewLanguage(){
         String newLanguage;
         if(outputString.equals("german")){
